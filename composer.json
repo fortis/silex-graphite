@@ -28,7 +28,7 @@
         "domnikl/statsd": "^2.4"
     },
     "require-dev": {
-        "silex/silex": "^2.0",
+        "silex/silex": "^2.0"
     },
     "autoload": {
         "psr-0": {
