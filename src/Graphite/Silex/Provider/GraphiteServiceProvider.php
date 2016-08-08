@@ -23,7 +23,6 @@ class GraphiteServiceProvider implements ServiceProviderInterface
     {
         $app['graphite'] = function (Application $app) {
             $client = new GraphiteClient($app['graphite.options']);
-
             return $client;
         };
     }
