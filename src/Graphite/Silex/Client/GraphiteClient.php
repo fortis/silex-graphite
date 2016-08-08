@@ -20,7 +20,13 @@ class GraphiteClient
      */
     public function send($data)
     {
-        $message = $this->config['prefix'].".$data ".time().PHP_EOL;
+        $pieces = [
+          $this->config['apiKey'],
+          $this->config['prefix'],
+          $data.' '.time(),
+        ];
+        $message = implode('.', $pieces).PHP_EOL;
+
         return $this->sendData($this->config['host'], $this->config['port'], $message);
     }
 
@@ -34,6 +40,7 @@ class GraphiteClient
     protected function sendData($host, $port, $message)
     {
         $socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+
         return socket_sendto($socket, $message, strlen($message), 0, $host, $port);
     }
 }
