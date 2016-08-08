@@ -1,0 +1,38 @@
+{
+    "name": "fortis/silex-graphite",
+    "description": "Silex 2 Service Provider for Hosted Graphite",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/fortis/silex-graphite",
+    "keywords": [
+        "log",
+        "silex",
+        "carbon",
+        "metrics",
+        "provider",
+        "graphite"
+    ],
+    "authors": [
+        {
+            "name": "Alan Bondarchuk",
+            "email": "imacoda@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/fortis/silex-graphite/issues"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.9",
+        "domnikl/statsd": "^2.4"
+    },
+    "require-dev": {
+        "silex/silex": "^2.0",
+    },
+    "autoload": {
+        "psr-0": {
+            "Graphite": "src/"
+        }
+    }
+}
