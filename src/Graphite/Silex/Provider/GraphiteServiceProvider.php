@@ -5,7 +5,7 @@ namespace Graphite\Silex\Provider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Silex\Application;
-use Graphite\Silex\Client;
+use Graphite\Silex\Client\GraphiteClient;
 
 class GraphiteServiceProvider implements ServiceProviderInterface
 {
@@ -22,7 +22,7 @@ class GraphiteServiceProvider implements ServiceProviderInterface
     public function register(Container $app)
     {
         $app['graphite'] = function (Application $app) {
-            $client = new Client($app['graphite.options']);
+            $client = new GraphiteClient($app['graphite.options']);
 
             return $client;
         };

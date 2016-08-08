@@ -2,7 +2,7 @@
 
 namespace Graphite\Silex\Client;
 
-class Client
+class GraphiteClient
 {
     private $config = null;
 
